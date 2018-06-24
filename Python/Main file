@@ -1,1 +1,12 @@
 
+
+
+
+divmod: Take two (non complex) numbers as arguments and return a pair of numbers consisting of their quotient and remainder 
+         when using integer division.
+         
+         Example: carry, val = divmod(v1+v2+carry, 10)
+         Here carry = quotient, val = remainder
+         Carry on the right side is the carry previously carried.
+         
+
