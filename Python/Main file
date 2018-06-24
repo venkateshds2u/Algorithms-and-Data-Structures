@@ -9,4 +9,11 @@ divmod: Take two (non complex) numbers as arguments and return a pair of numbers
          Here carry = quotient, val = remainder
          Carry on the right side is the carry previously carried.
          
+         
+reverse a string : s[::-1]
+
+There is a bool data type (which inherits from int and has only two values: True and False).
+
+
+         
 
