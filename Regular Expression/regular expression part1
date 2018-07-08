@@ -1,0 +1,143 @@
+My goal in this article is to teach you everything you ever wanted to know about Regular Expressions. Regular Expressions are used to decide if a set of characters match what you are searching for. You use a series of codes to define what you are looking for.
+
+Because these codes are so simple and look confusing when they are crammed together, people think Regular Expressions are too hard to use. My mission is to make them easy to use in this article and the next. Promise!
+
+I’m going to provide a lot of code you can use. The language I’m using to demonstrate Regular Expressions in this tutorial is Python. I previously talked about Regular Expressions in Javascript as well. If you’d like me to go over how Regular Expressions are different in other languages, just leave a comment below.
+
+The Basics of Regular Expressions
+
+Let’s say you are given a 10,000 page document and your asked to retrieve every street address from that document. A very easy task with a Regular Expression, which will be known as Regex from now on.
+
+I’m going to start off simple. Let’s say you just need the street address and that every city is the same and there are no apartments or suites. You can trust that what you are looking for will be of the form 123 Main St. You are also told that:
+
+House numbers will be no longer than 5 digits in length
+Street names are exactly 1 word
+Every address is either a St. or Ave. and a period is always used
+The Regex you would use to define these addresses would be:
+
+\d {1,5} – Between 1 to 5 numbers in length
+\s – Followed by a whitespace character
+\w+ – Followed by 1 or more letters
+\s – Another white space
+\w+ – Followed by 1 or more letters
+\. – Followed by a period
+To find a sequence of characters, you have to define the rules that will always be true for them and then turn those rules into an expression. Here are codes used to represent different types of characters:
+
+\d – This represents any number
+\D – This represents anything that isn’t a number
+\s – This represents anything considered white space (space, tab, newline, etc.)
+\S – This represents anything not considered white space
+\w – This represents any character
+\W – This represents anything that is not a character
+. – Matches any character, except a line break
+\b – Matches for a space that precedes or follows a whole word
+Searching for a Name
+
+If you were tasked with searching through a mountain of documents for anyone named Jennifer, how would you do that. You can also search for literal text and you would do that with this expression:
+
+‘Jennifer\s\w+\s’ This will search for the word Jennifer followed by a space, 1 or more characters and then another space. The plus sign (+) stands for 1 or more of the code that precedes it. In this case I’m stating, I’m looking for 1 or more characters (\w).
+
+There are other codes like the plus (+):
+
+? – Signifies you are looking for 0 or 1 repetitions of the code that precedes
+* – Signifies you expect 0 or more repetitions
+{n} – Used when you expect a specific number (n) of repetitions
+{x,y} – Used when you expect between (x) to (y) repetitions
+[adsense]
+
+Some Characters Need Special Care
+
+While we can search for literal terms, like we did with Jennifer above, some characters require escaping. By escaping I mean they must be followed by a backslash. The dollar sign ($) and period (.) are two such examples. You could search for a dollar amount with this regex:
+
+\$\d*\.\d{2}
+
+Looking for a dollar sign
+Followed by 0 to more numbers
+Followed by a period
+Followed by 2 numbers
+Other characters that need escaped with a backslash include:
+
+(
+)
+*
++
+?
+[
+\
+^
+{
+|
+How to Search for Specific White Space
+
+If you want to search for specific white space, you use the following codes:
+
+\e – Escape
+\f – Form Feed
+\n – Newline
+\r – Carriage Return
+\t – Horizontal Tab
+Just place them in the code as if the were any other character.
+
+Match One of a Couple of Characters
+
+What could you do if you wanted to search for commonly miss-spelled words. Calendar is commonly miss-spelled, and here is how you could search for Calendar and Calender.
+
+calend[ae]r : This regex will come back positive if it is spelled in either way. Only one of the letters inside of the braces will be used however. This brace can also be used to search for a series of characters, like these examples:
+
+[a-z] : This would match any lower case letter
+[0-9] : This would match any number
+[A-Fa-z1-4] : This would match uppercase letters from A to F, all lowercase and the numbers 1 to 4
+Searching for Missing Jennifer’s
+
+Remember when you searched through 1000’s of pages to find everyone named Jennifer? Well you missed a few. Don’t worry, we can easily find the Jen’s, and Jenny’s with the vertical bar code. The vertical bar (|) is looked at as the word OR in Regex. To find all the Jennifer’s, we can use this code instead:
+
+(Jennifer|Jenny|Jen)\b\w+\b
+
+Note: The code \b will match for any space that precedes or follows a whole word. \B will match for when their is no space separating characters.
+
+The following code would match for all of the different Jennifer’s and also return the last name.
+
+‘(Je[nnifer|nny|n]{1,6}\s\w+\s)’
+
+This code is stating, return the first and last name if the first name:
+
+Starts with ‘Je’ and then either…
+Ends with the letters ‘nnifer’ or …
+Ends with the letters ‘nny’ or just ‘n’
+The curly braces make sure that between 1 to 6 characters have to be used
+Using Search Codes Multiple Times
+
+Did you notice in the last example how I surrounded the first name options with braces()? By surrounding parts of a search in braces, you can then call for it with a backslash (\), followed by a number representing it’s location in the Regex.
+
+So since this was the first time the braces where used in the Regex, I can use it again with \1. The next braced code block would be referenced with \2 and so on up to \9. Everyone after that would be referenced by surrounding them with carrot braces <\10>.
+
+It would also be useful to grab just the text that lies between tags in html code. You code do that with the following code:
+
+‘\<\w+>(.+)\<\\\w+>’
+
+Are you starting to see why people get confused by Regex’s? I’ll break this down for you:
+
+Everything is surrounded with quotes
+\< : Used to search for a carot brace (You have to escape them with a \)
+\w+ : 1 or more characters
+> : You don’t have to escape the closing carot brace
+(.*) : Capture 1 or more characters  and store them in \1
+\< : Escape the brace again
+\\ : Escape the Backslash character
+I trust you can understand the rest.
+
+Last Few Codes
+
+You can also reference the beginning of a line of text with the carot symbol (^). So if you wanted to capture and sentence that starts with “The cat”, you’d use this code:
+
+‘^The cat\s\w*\.’
+
+Try figuring that out on your own. You can reference the end of a line of text with the Dollar Sign ($), in the same way.
+
+That’s All Folks… For Now
+
+That’s all I can go over on Regex’s in this article. I will continue in the next article to show you how to apply them in real world code with ton’s of examples.
+
+Till Next Time
+
+Think Tank
