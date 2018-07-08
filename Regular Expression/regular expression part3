@@ -1,0 +1,94 @@
+Here is All of the Code Used in the Video
+
+f = open(‘randomcharacters.txt’)
+
+strToSearch =””
+
+for line in f:
+strToSearch += line
+
+print(strToSearch)
+
+patFinder2 = re.compile(‘aa1B’, re.IGNORECASE)
+findPat2 = re.search(patFinder2,strToSearch)
+if (findPat2):
+print(findPat2.group())
+else: print(“Pattern Not Found”)
+
+patFinder3 = re.compile(‘.*’, re.IGNORECASE)
+findPat3 = re.findall(patFinder3,strToSearch)
+
+for i in findPat3:
+print(i)
+
+patFinder4 = re.compile(‘[a-z]’, re.IGNORECASE)
+findPat4 = re.findall(patFinder4,strToSearch)
+
+for i in findPat4:
+print(i, end=”)
+
+print(‘\n’)
+
+patFinder5 = re.compile(‘[#$\*/\?\-0-9]’, re.IGNORECASE)
+findPat5 = re.findall(patFinder5,strToSearch)
+
+for i in findPat5:
+print(i, end=”)
+
+print(‘\n’)
+
+patFinder6 = re.compile(‘\d\D\s\S.\W\w’, re.IGNORECASE)
+findPat6 = re.findall(patFinder6,strToSearch)
+
+for i in findPat6:
+print(i, end=”)
+
+print(‘\n’)
+
+patFinder7 = re.compile(‘\d(\D\s\S.)(\W\w)’, re.IGNORECASE)
+findPat7 = re.search(patFinder7,strToSearch)
+
+print(findPat7.group(1))
+print(findPat7.group(2))
+
+print(‘\n’)
+
+g = open(‘names.txt’)
+
+strToSearch =””
+
+for line in g:
+strToSearch += line
+
+print(strToSearch)
+
+patFinder8 = re.compile(‘(Je[nnifer|nny|n]{1,6}\s\w+\s)’, re.IGNORECASE)
+findPat8 = re.findall(patFinder8,strToSearch)
+
+for i in findPat8:
+print(i)
+
+f = open(‘randomtext.txt’)
+
+strToSearch =””
+
+for line in f:
+strToSearch += line
+
+# Creating a pattern for pi
+piFinder = re.compile(‘(\d\.\d*)\w’)
+
+# Search the string for the pattern I created
+findPi = re.search(piFinder,strToSearch)
+
+print(findPi.group()) # Show the value that matched the pattern
+
+# Create a pattern to find a phone number
+phNumFinder = re.compile(‘([0-9]{3}-?[0-9]{3}-?[0-9]{4})|(\(?[0-9]{3}\)?[0-9]{3}-?[0-9]{4})’)
+
+findPhNum =  re.findall(phNumFinder,strToSearch)
+
+for i in findPhNum:
+print(i)
+
+f.close()
