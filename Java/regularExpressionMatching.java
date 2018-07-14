@@ -37,11 +37,7 @@ class Solution
                     dp[i][j] = dp[i][j - 2];
                     if (wp[j-2] == '.' || wp[j - 2] == ws[i - 1]) 
                     {
-                        System.out.println("before"+dp[i][j]);
                         dp[i][j] = dp[i][j] || dp[i - 1][j];
-                        System.out.println("i values are"+i);
-                        System.out.println(" j values are"+j);
-                        System.out.println("dp values are"+dp[i][j]);
                     }
                 }
                 else
