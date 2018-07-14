@@ -2,54 +2,37 @@
 
 //wildcard matching
 
-
-public class WildCardMatching 
-{
-    public boolean isMatch(String s, String p) 
-    {
-        char[] str = s.toCharArray();
-        char[] pattern = p.toCharArray();
-
-        //replace multiple * with one *
-        //e.g a**b***c --> a*b*c
-        int writeIndex = 0;
-        boolean isFirst = true;
-        for ( int i = 0 ; i < pattern.length; i++) 
+class Solution {
+    public boolean isMatch(String s, String p) {
+        
+        int m=s.length();
+        int n= p.length();
+        char[] ws = s.toCharArray();
+        char[] wp = p.toCharArray();
+        
+        boolean[][] dp = new boolean[m+1][n+1];
+        dp[0][0] = true;
+        for(int i=1;i<=m;i++)
         {
-            if (pattern[i] == '*') {
-                if (isFirst) {
-                    pattern[writeIndex++] = pattern[i];
-                    isFirst = false;
-                }
-            } else {
-                pattern[writeIndex++] = pattern[i];
-                isFirst = true;
-            }
+            dp[i][0] = false;
         }
-
-        boolean T[][] = new boolean[str.length + 1][writeIndex + 1];
-
-        if (writeIndex > 0 && pattern[0] == '*') 
+        for(int j=1;j<=n;j++)
         {
-            T[0][1] = true;
+            dp[0][j]=dp[0][j-1] && wp[j-1]=='*';
+            
         }
-
-        T[0][0] = true;
-
-        for (int i = 1; i < T.length; i++) 
+        for(int i=1;i<=m;i++)
         {
-            for (int j = 1; j < T[0].length; j++) 
+            for(int j=1;j<=n;j++)
             {
-                if (pattern[j-1] == '?' || str[i-1] == pattern[j-1]) 
-                {
-                    T[i][j] = T[i-1][j-1];
-                }
-                else if (pattern[j-1] == '*')
-                {
-                    T[i][j] = T[i-1][j] || T[i][j-1];
-                }
+                if(wp[j-1]=='?' || ws[i-1]==wp[j-1])
+                    dp[i][j] = dp[i-1][j-1];
+                else if(wp[j-1]=='*')
+                    dp[i][j] = dp[i-1][j] || dp[i][j-1];
+                
             }
         }
-
-        return T[str.length][writeIndex];
+        return dp[m][n];
+        
     }
+}
