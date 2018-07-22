@@ -10,3 +10,8 @@ Features of Apache Cassandra
 5. Cassandra Query Language.
 6. Flexible Data Storage.
 7. Easy Data Distribution
+
+
+
+
+
