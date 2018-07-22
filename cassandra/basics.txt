@@ -1,1 +1,12 @@
 
+
+
+Features of Apache Cassandra
+
+1. Elastic Scalability.
+2. Efficient Writes.
+3. High Availability and Fault Tolerant.
+4. Tunable Consistency
+5. Cassandra Query Language.
+6. Flexible Data Storage.
+7. Easy Data Distribution
