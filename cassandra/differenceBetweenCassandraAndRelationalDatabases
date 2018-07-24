@@ -1,0 +1,29 @@
+
+
+
+
+
+
+
+Relational Database	                                        Cassandra
+Handles moderate incoming data velocity             Handles high incoming data velocity
+
+Data arriving from one/few locations                Data arriving from many locations
+
+Manages primarily structured data                   Manages all types of data
+
+Supports complex/nested transactions                Supports simple transactions
+
+Single points of failure with failover              No single points of failure; constant uptime
+
+Supports moderate data volumes                      Supports very high data volumes
+
+Centralized deployments                             Decentralized deployments
+
+Data written in mostly one location                 Data written in many locations
+
+Supports read scalability                           Supports read and write scalability
+(with consistency sacrifices)   
+
+
+Deployed in vertical scale up fashion               Deployed in horizontal scale out fashion
