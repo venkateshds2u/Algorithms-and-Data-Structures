@@ -9,3 +9,21 @@ What is Ansible?
 IT Automation, configuration management and provisioning tool.
 
 
+It uses playbooks to deploy, manage, build, test and configure anything from
+full server environments to websites to custom compiled source code for applications.
+
+
+Ansible Features:
+
+*   Agentless: no need for agent installation and management.
+
+*   Built on top of python and hence provides a lot of python's functionality.
+
+*   uses SSH for secure connections.
+
+*   Follows push based architecture for sending configurations.
+
+*   Very easy and fast to setup, Minimal requirements.
+
+
+
