@@ -4,19 +4,32 @@
 
 
 How Containers Benefit Your Business
-DevOps & Continuous Delivery. When the application consists of multiple containers with clear interfaces between them, it is a simple and low-risk matter to update a container, assess the impact, and then either revert to the old version or roll the update out across similar containers. By having multiple containers provide the same capability, upgrading each container can be done without negatively affecting service.
 
-Replicating Environments. When using containers, it's a trivial matter to instantiate identical copies of your full application stack and configuration. These can then be used by new hires, partners, support teams, and others to safely experiment in isolation.
+DevOps & Continuous Delivery. When the application consists of multiple containers with clear interfaces between them, 
+it is a simple and low-risk matter to update a container, assess the impact, and then either revert to the old version or 
+roll the update out across similar containers. By having multiple containers provide the same capability, upgrading each container 
+can be done without negatively affecting service.
 
-Accurate Testing. You can have confidence that your QA environment exactly matches what will be deployed – down to the exact version of every library.
+Replicating Environments. When using containers, it's a trivial matter to instantiate identical copies of your full application stack 
+and configuration. These can then be used by new hires, partners, support teams, and others to safely experiment in isolation.
 
-Scalability. By architecting an application to be built from multiple container instances, adding more containers scales out capacity and throughput. Similarly, containers can be removed when demand falls. Using orchestration frameworks – such as Kubernetes and Apache Mesos – further simplifies elastic scaling.
+Accurate Testing. You can have confidence that your QA environment exactly matches what will be deployed – down to the exact version
+of every library.
 
-Isolation. Every container running on the same host is independent and isolated from the others as well as from the host itself. The same equipment can simultaneously host development, support, test, and production versions of your application – even running different versions of tools, languages, databases, and libraries without any risk that one environment will impact another.
+Scalability. By architecting an application to be built from multiple container instances, adding more containers scales out capacity
+and throughput. Similarly, containers can be removed when demand falls. Using orchestration frameworks – such as Kubernetes 
+and Apache Mesos – further simplifies elastic scaling.
+
+Isolation. Every container running on the same host is independent and isolated from the others as well as from the host itself. 
+The same equipment can simultaneously host development, support, test, and production versions of your application – even running 
+different versions of tools, languages, databases, and libraries without any risk that one environment will impact another.
 
 Performance. Unlike VMs (whether used directly or through Vagrant), containers are lightweight and have minimal impact on performance.
 
-High Availability. By running with multiple containers, redundancy can be built into the application. If one container fails, then the surviving peers – which are providing the same capability – continue to provide service. With the addition of some automation (see the orchestration section of this paper), failed containers can be automatically recreated (rescheduled) either on the same or a different host, restoring full capacity and redundancy.
+High Availability. By running with multiple containers, redundancy can be built into the application. If one container fails, then the 
+surviving peers – which are providing the same capability – continue to provide service. With the addition of some 
+automation (see the orchestration section of this paper), failed containers can be automatically recreated (rescheduled) either
+on the same or a different host, restoring full capacity and redundancy.
 
 
 
