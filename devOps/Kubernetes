@@ -1,0 +1,21 @@
+
+
+
+Kubernetes: was created by Google and is one of the most feature-rich and widely used orchestration frameworks; its key features include:
+
+Automated deployment and replication of containers
+
+Online scale-in or scale-out of container clusters
+
+Load balancing over groups of containers
+
+Rolling upgrades of application containers
+
+Resilience, with automated rescheduling of failed containers
+
+Controlled exposure of network ports to systems outside of the cluster
+
+
+
+
+
