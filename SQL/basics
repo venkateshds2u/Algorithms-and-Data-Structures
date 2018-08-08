@@ -3,26 +3,83 @@
 
 
 
+Normalization Rule
+Normalization rules are divided into the following normal forms:
+
+First Normal Form
+Second Normal Form
+Third Normal Form
+BCNF
+Fourth Normal Form
+
 
 
 
 
 Different Normal Forms
 
-First Normal Form:
+
+First Normal Form (1NF)
+For a table to be in the First Normal Form, it should follow the following 4 rules:
+
+It should only have single(atomic) valued attributes/columns.
+Values stored in a column should be of the same domain
+All the columns in a table should have unique names.
+And the order in which data is stored, does not matter.
 
 Doesn't allow multi valued attribute.
 
 
 
-Second Normal Form:
+Second Normal Form (2NF)
+For a table to be in the Second Normal Form,
 
-Doesn't allow partial functional dependency.
+It should be in the First Normal form.
+And, it should not have Partial Dependency.
 
 
-Third Normal Form:
 
-Doesn't allow transitive dependency.
+
+Third Normal Form (3NF)
+A table is said to be in the Third Normal Form when,
+
+It is in the Second Normal form.
+And, it doesn't have Transitive Dependency.
+
+
+
+
+Boyce and Codd Normal Form (BCNF)
+Boyce and Codd Normal Form is a higher version of the Third Normal form. 
+This form deals with certain type of anomaly that is not handled by 3NF. 
+A 3NF table which does not have multiple overlapping candidate keys is said to be in BCNF. 
+For a table to be in BCNF, following conditions must be satisfied:
+
+R must be in 3rd Normal Form
+and, for each functional dependency ( X → Y ), X should be a super Key.
+
+
+
+
+Fourth Normal Form (4NF)
+A table is said to be in the Fourth Normal Form when,
+
+It is in the Boyce-Codd Normal Form.
+And, it doesn't have Multi-Valued Dependency.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
