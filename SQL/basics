@@ -1,1 +1,25 @@
 
+
+
+
+
+
+
+
+
+Different Normal Forms
+
+First Normal Form:
+
+Doesn't allow multi valued attribute.
+
+
+
+Second Normal Form:
+
+Doesn't allow partial functional dependency.
+
+
+Third Normal Form:
+
+
