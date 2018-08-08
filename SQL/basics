@@ -22,4 +22,8 @@ Doesn't allow partial functional dependency.
 
 Third Normal Form:
 
+Doesn't allow transitive dependency.
+
+
+
 
